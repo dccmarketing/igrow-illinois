@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package DocBlock
+ * @package iGrow Illinois
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package DocBlock
+ * @package iGrow Illinois
  */
 
 get_header(); ?>

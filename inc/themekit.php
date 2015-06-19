@@ -6,19 +6,19 @@
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 
-function function_names_analytics_code() { ?>
+function igrow_illinois_analytics_code() { ?>
 
 	<!-- paste code here -->
 
-<?php } // function_names_analytics_code(0)
-add_action( 'after_body', 'function_names_analytics_code' );
+<?php } // igrow_illinois_analytics_code(0)
+add_action( 'after_body', 'igrow_illinois_analytics_code' );
 
 /**
  * Properly encode a font URLs to enqueue a Google font
  *
  * @return 	mixed 		A properly formatted, translated URL for a Google font
  */
-function function_names_fonts_url() {
+function igrow_illinois_fonts_url() {
 
 	$return 	= '';
 	$families 	= '';
@@ -42,7 +42,7 @@ function function_names_fonts_url() {
 
 	return $return;
 
-} // function_names_fonts_url()
+} // igrow_illinois_fonts_url()
 
 /**
  * Returns a post object of the requested post type
@@ -51,10 +51,10 @@ function function_names_fonts_url() {
  * @param   array 		$params 		Optional parameters
  * @return 	object 		A post object
  */
-function function_names_get_posts( $post, $params = array() ) {
+function igrow_illinois_get_posts( $post, $params = array() ) {
 
 	$return = '';
-	$return = wp_cache_get( 'function_names_' . $post . '_posts', 'function_names_posts' );
+	$return = wp_cache_get( 'igrow_illinois_' . $post . '_posts', 'igrow_illinois_posts' );
 
 	if ( false === $return ) {
 
@@ -80,7 +80,7 @@ function function_names_get_posts( $post, $params = array() ) {
 
 		if ( ! is_wp_error( $query ) && $query->have_posts() ) {
 
-			wp_cache_set( 'function_names_' . $post . '_posts', $query, 'function_names_posts', 5 * MINUTE_IN_SECONDS );
+			wp_cache_set( 'igrow_illinois_' . $post . '_posts', $query, 'igrow_illinois_posts', 5 * MINUTE_IN_SECONDS );
 
 			$return = $query;
 
@@ -90,7 +90,7 @@ function function_names_get_posts( $post, $params = array() ) {
 
 	return $return;
 
-} // function_names_get_posts()
+} // igrow_illinois_get_posts()
 
 /**
  * Returns the requested SVG
@@ -99,7 +99,7 @@ function function_names_get_posts( $post, $params = array() ) {
  *
  * @return 	mixed 					The SVG code
  */
-function function_names_get_svg( $svg, $link = '' ) {
+function igrow_illinois_get_svg( $svg, $link = '' ) {
 
 	$output = '';
 
@@ -140,7 +140,7 @@ function function_names_get_svg( $svg, $link = '' ) {
 
 	return $output;
 
-} // function_names_get_svg()
+} // igrow_illinois_get_svg()
 
 /**
  * Echos the requested SVG
@@ -149,11 +149,11 @@ function function_names_get_svg( $svg, $link = '' ) {
  *
  * @return 	mixed 					The SVG code
  */
-function function_names_the_svg( $svg ) {
+function igrow_illinois_the_svg( $svg ) {
 
-	echo function_names_get_svg( $svg );
+	echo igrow_illinois_get_svg( $svg );
 
-} // function_names_the_svg()
+} // igrow_illinois_the_svg()
 
 /**
  * Returns the URL of the featured image
@@ -163,7 +163,7 @@ function function_names_the_svg( $svg ) {
  *
  * @return 	string | bool 				The URL of the featured image, otherwise FALSE
  */
-function function_names_get_thumbnail_url( $postID, $size = 'thumbnail' ) {
+function igrow_illinois_get_thumbnail_url( $postID, $size = 'thumbnail' ) {
 
 	if ( empty( $postID ) ) { return FALSE; }
 
@@ -177,7 +177,7 @@ function function_names_get_thumbnail_url( $postID, $size = 'thumbnail' ) {
 
 	return $thumb_array[0];
 
-} // function_names_get_thumbnail_url()
+} // igrow_illinois_get_thumbnail_url()
 
 /**
  * Returns an array of the featured image details
@@ -186,7 +186,7 @@ function function_names_get_thumbnail_url( $postID, $size = 'thumbnail' ) {
  *
  * @return 	array 					Array of info about the featured image
  */
-function function_names_get_featured_images( $postID ) {
+function igrow_illinois_get_featured_images( $postID ) {
 
 	if ( empty( $postID ) ) { return FALSE; }
 
@@ -196,7 +196,7 @@ function function_names_get_featured_images( $postID ) {
 
 	return wp_prepare_attachment_for_js( $imageID );
 
-} // function_names_get_bg_image()
+} // igrow_illinois_get_bg_image()
 
 /**
  * Prints whatever in a nice, readable format
@@ -215,7 +215,7 @@ function pretty( $input ) {
  * @param 	string 		$after 		Text for after the limit
  * @return 	string 					The possibly reduced string
  */
-function function_names_shorten_text( $text, $limit = 100, $after = '...' ) {
+function igrow_illinois_shorten_text( $text, $limit = 100, $after = '...' ) {
 
 	$length = strlen( $text );
 	$text 	= substr( $text, 0, $limit );
@@ -228,7 +228,7 @@ function function_names_shorten_text( $text, $limit = 100, $after = '...' ) {
 
 	return $text;
 
-} // function_names_shorten_text()
+} // igrow_illinois_shorten_text()
 
 
 /**
@@ -237,16 +237,16 @@ function function_names_shorten_text( $text, $limit = 100, $after = '...' ) {
  * @param 	array 		$post_mime_types 		The current MIME types
  * @return 	array 								The modified MIME types
  */
-function function_names_add_mime_types( $post_mime_types ) {
+function igrow_illinois_add_mime_types( $post_mime_types ) {
 
     $post_mime_types['application/pdf'] = array( esc_html__( 'PDFs', 'igrow-illinois' ), esc_html__( 'Manage PDFs', 'igrow-illinois' ), _n_noop( 'PDF <span class="count">(%s)</span>', 'PDFs <span class="count">(%s)</span>' ) );
     $post_mime_types['text/x-vcard'] = array( esc_html__( 'vCards', 'igrow-illinois' ), esc_html__( 'Manage vCards', 'igrow-illinois' ), _n_noop( 'vCard <span class="count">(%s)</span>', 'vCards <span class="count">(%s)</span>' ) );
 
     return $post_mime_types;
 
-} // function_names_add_mime_types
+} // igrow_illinois_add_mime_types
 
-add_filter( 'post_mime_types', 'function_names_add_mime_types' );
+add_filter( 'post_mime_types', 'igrow_illinois_add_mime_types' );
 
 
 /**
@@ -254,16 +254,16 @@ add_filter( 'post_mime_types', 'function_names_add_mime_types' );
  * @param  array  $existing_mimes [description]
  * @return [type]                 [description]
  */
-function function_names_custom_upload_mimes( $existing_mimes = array() ) {
+function igrow_illinois_custom_upload_mimes( $existing_mimes = array() ) {
 
 	// add your extension to the array
 	$existing_mimes['vcf'] = 'text/x-vcard';
 
 	return $existing_mimes;
 
-} // function_names_custom_upload_mimes()
+} // igrow_illinois_custom_upload_mimes()
 
-add_filter( 'upload_mimes', 'function_names_custom_upload_mimes' );
+add_filter( 'upload_mimes', 'igrow_illinois_custom_upload_mimes' );
 
 
 /**
@@ -273,7 +273,7 @@ add_filter( 'upload_mimes', 'function_names_custom_upload_mimes' );
  * @param 	array 		$classes 		Classes for the body element.
  * @return 	array 						The modified body class array
  */
-function function_names_page_body_classes( $classes ) {
+function igrow_illinois_page_body_classes( $classes ) {
 
 	global $post;
 
@@ -281,18 +281,18 @@ function function_names_page_body_classes( $classes ) {
 
 	return $classes;
 
-} // function_names_page_body_classes()
-add_filter( 'body_class', 'function_names_page_body_classes' );
+} // igrow_illinois_page_body_classes()
+add_filter( 'body_class', 'igrow_illinois_page_body_classes' );
 
 /**
  * Creates a style tag in the header with the background image
  *
  * @return 		void
  */
-function function_names_background_images() {
+function igrow_illinois_background_images() {
 
 	$output = '';
-	$image 	= function_names_get_thumbnail_url( get_the_ID(), 'full' );
+	$image 	= igrow_illinois_get_thumbnail_url( get_the_ID(), 'full' );
 
 	if ( ! $image ) {
 
@@ -311,7 +311,7 @@ function function_names_background_images() {
 	echo $output;
 
 }
-//add_action( 'wp_head', 'function_names_background_images' );
+//add_action( 'wp_head', 'igrow_illinois_background_images' );
 
 /**
  * Creates links to all favicons
@@ -321,7 +321,7 @@ function function_names_background_images() {
  * @link 	http://iconogen.com/
  * @return 	mixed 			HTML for favicon links
  */
-function function_names_add_favicons() {
+function igrow_illinois_add_favicons() {
 
 	?><link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
 
@@ -346,7 +346,7 @@ function function_names_add_favicons() {
 	<meta name="msapplication-square310x310logo" content="/favicons/largetile.png" /><?php
 
 }
-add_action( 'wp_head', 'function_names_add_favicons' );
+add_action( 'wp_head', 'igrow_illinois_add_favicons' );
 
 /**
  * Converts formatted phone numbers to just numbers for tel links
@@ -354,7 +354,7 @@ add_action( 'wp_head', 'function_names_add_favicons' );
  * @param 	string 		$number 			A formatted phone number
  * @return 	string 							The number minus characters besides numbers
  */
-function function_names_make_number( $number ) {
+function igrow_illinois_make_number( $number ) {
 
 	if ( empty( $number ) ) { return FALSE; }
 
@@ -364,17 +364,17 @@ function function_names_make_number( $number ) {
 
 	return $return;
 
-} // function_names_make_number()
+} // igrow_illinois_make_number()
 
 /**
  * Enqueues stylesheet for login page
  *
  * @return 	void
  */
-function function_names_customize_login_page() {
+function igrow_illinois_customize_login_page() {
 
-	wp_enqueue_style( 'scriptname-login', get_stylesheet_directory_uri() . '/login.css' );
+	wp_enqueue_style( 'igrow-illinois-login', get_stylesheet_directory_uri() . '/login.css' );
 
-} // function_names_customize_login_page()
-add_action( 'login_enqueue_scripts', 'function_names_customize_login_page' );
+} // igrow_illinois_customize_login_page()
+add_action( 'login_enqueue_scripts', 'igrow_illinois_customize_login_page' );
 

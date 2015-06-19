@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package DocBlock
+ * @package iGrow Illinois
  */
 
 ?><section class="no-results not-found">

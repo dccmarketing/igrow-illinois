@@ -2,7 +2,7 @@
 /**
  * The sidebar for the Sidrbar Content page template
  *
- * @package DocBlock
+ * @package iGrow Illinois
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

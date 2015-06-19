@@ -1,11 +1,11 @@
 <?php
 /**
- * Replace With Theme Name functions and definitions
+ * iGrow Illinois functions and definitions
  *
- * @package DocBlock
+ * @package iGrow Illinois
  */
 
-if ( ! function_exists( 'function_names_setup' ) ) :
+if ( ! function_exists( 'igrow_illinois_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -13,7 +13,7 @@ if ( ! function_exists( 'function_names_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function function_names_setup() {
+function igrow_illinois_setup() {
 
 	/*
 	 * Make theme available for translation.
@@ -64,14 +64,14 @@ function function_names_setup() {
 	) );*/
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'function_names_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'igrow_illinois_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 
-} // function_names_setup()
-endif; // function_names_setup
-add_action( 'after_setup_theme', 'function_names_setup' );
+} // igrow_illinois_setup()
+endif; // igrow_illinois_setup
+add_action( 'after_setup_theme', 'igrow_illinois_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -80,19 +80,19 @@ add_action( 'after_setup_theme', 'function_names_setup' );
  *
  * @global 		int 		$content_width
  */
-function function_names_content_width() {
+function igrow_illinois_content_width() {
 
 	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
 
 }
-add_action( 'after_setup_theme', 'function_names_content_width', 0 );
+add_action( 'after_setup_theme', 'igrow_illinois_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function function_names_widgets_init() {
+function igrow_illinois_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'igrow-illinois' ),
@@ -104,24 +104,24 @@ function function_names_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 
-} // function_names_widgets_init()
-add_action( 'widgets_init', 'function_names_widgets_init' );
+} // igrow_illinois_widgets_init()
+add_action( 'widgets_init', 'igrow_illinois_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function function_names_scripts() {
+function igrow_illinois_scripts() {
 
-	wp_enqueue_style( 'scriptname-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'igrow-illinois-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'scriptname-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
+	wp_enqueue_script( 'igrow-illinois-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'scriptname-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
+	wp_enqueue_script( 'igrow-illinois-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
 
-	// wp_enqueue_style( 'scriptname-fonts', function_names_fonts_url(), array(), null );
+	// wp_enqueue_style( 'igrow-illinois-fonts', igrow_illinois_fonts_url(), array(), null );
 
-} // function_names_scripts()
-add_action( 'wp_enqueue_scripts', 'function_names_scripts' );
+} // igrow_illinois_scripts()
+add_action( 'wp_enqueue_scripts', 'igrow_illinois_scripts' );
 
 /**
  * Implement the Custom Header feature.

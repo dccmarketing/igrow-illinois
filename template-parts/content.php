@@ -1,6 +1,6 @@
 <?php
 /**
- * @package DocBlock
+ * @package iGrow Illinois
  */
 
 ?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -12,7 +12,7 @@
 
 			?><div class="entry-meta"><?php
 
-				function_names_posted_on();
+				igrow_illinois_posted_on();
 
 			?></div><!-- .entry-meta --><?php
 
@@ -37,7 +37,7 @@
 
 	<footer class="entry-footer"><?php
 
-		function_names_entry_footer();
+		igrow_illinois_entry_footer();
 
 	?></footer><!-- .entry-footer -->
 </article><!-- #post-## -->

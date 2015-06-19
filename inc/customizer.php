@@ -15,7 +15,7 @@
 	$wp_customize->add_panel( 'theme_options',
 		array(
 			'capability'  		=> 'edit_theme_options',
-			'description'  		=> esc_html__( 'Options for Replace With Theme Name', 'igrow-illinois' ),
+			'description'  		=> esc_html__( 'Options for iGrow Illinois', 'igrow-illinois' ),
 			'priority'  		=> 10,
 			'theme_supports'  	=> '',
 			'title'  			=> esc_html__( 'Theme Options', 'igrow-illinois' ),
@@ -80,7 +80,7 @@ add_action( 'customize_preview_init', '_s_customize_preview_js' );*/
 
 
 /**
- * Replace With Theme Name Theme Customizer
+ * iGrow Illinois Theme Customizer
  *
  * Contains methods for customizing the theme customization screen.
  *
@@ -88,7 +88,7 @@ add_action( 'customize_preview_init', '_s_customize_preview_js' );*/
  * @since 		1.0.0
  * @package  	DocBlock
  */
-class function_names_Customize {
+class igrow_illinois_Customize {
 
    /**
 	* This hooks into 'customize_register' (available as of WP 3.4) and allows
@@ -109,7 +109,7 @@ class function_names_Customize {
 		$wp_customize->add_panel( 'theme_options',
 			array(
 				'capability'  		=> 'edit_theme_options',
-				'description'  		=> esc_html__( 'Options for Replace With Theme Name', 'igrow-illinois' ),
+				'description'  		=> esc_html__( 'Options for iGrow Illinois', 'igrow-illinois' ),
 				'priority'  		=> 10,
 				'theme_supports'  	=> '',
 				'title'  			=> esc_html__( 'Theme Options', 'igrow-illinois' ),
@@ -490,10 +490,10 @@ class function_names_Customize {
 		<style type="text/css"><?php
 
 			// pattern:
-			// function_names_Customize::generate_css( 'selector', 'style', 'mod_name', 'prefix', 'postfix', true );
+			// igrow_illinois_Customize::generate_css( 'selector', 'style', 'mod_name', 'prefix', 'postfix', true );
 			//
 			// background-image example:
-			// function_names_Customize::generate_css( '.class', 'background-image', 'background_image_example', 'url(', ')' );
+			// igrow_illinois_Customize::generate_css( '.class', 'background-image', 'background_image_example', 'url(', ')' );
 
 
 		?></style><!-- Customizer CSS --><?php
@@ -511,7 +511,7 @@ class function_names_Customize {
 	 */
 	public static function live_preview() {
 
-		wp_enqueue_script( 'function_names_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'jquery', 'customize-preview' ), '', true );
+		wp_enqueue_script( 'igrow_illinois_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'jquery', 'customize-preview' ), '', true );
 
 	} // live_preview()
 
@@ -557,10 +557,10 @@ class function_names_Customize {
 } // class
 
 // Setup the Theme Customizer settings and controls...
-add_action( 'customize_register' , array( 'function_names_Customize' , 'register' ) );
+add_action( 'customize_register' , array( 'igrow_illinois_Customize' , 'register' ) );
 
 // Output custom CSS to live site
-add_action( 'wp_head' , array( 'function_names_Customize' , 'header_output' ) );
+add_action( 'wp_head' , array( 'igrow_illinois_Customize' , 'header_output' ) );
 
 // Enqueue live preview javascript in Theme Customizer admin screen
-add_action( 'customize_preview_init' , array( 'function_names_Customize' , 'live_preview' ) );
+add_action( 'customize_preview_init' , array( 'igrow_illinois_Customize' , 'live_preview' ) );

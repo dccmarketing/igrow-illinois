@@ -10,22 +10,22 @@
  *
  * @return 	string 							modified menu
  */
-function function_names_menu_caret( $item_output, $item, $depth, $args ) {
+function igrow_illinois_menu_caret( $item_output, $item, $depth, $args ) {
 
 	if ( ! in_array( 'menu-item-has-children', $item->classes ) ) { return $item_output; }
 
-	$atts 	= function_names_get_attributes( $item );
+	$atts 	= igrow_illinois_get_attributes( $item );
 	$output = '';
 
 	$output .= '<a href="' . $item->url . '">';
 	$output .= $item->title;
-	$output .= '<span class="children">' . function_names_get_svg( 'caret-down' ) . '</span>';
+	$output .= '<span class="children">' . igrow_illinois_get_svg( 'caret-down' ) . '</span>';
 	$output .= '</a>';
 
 	return $output;
 
-} // function_names_menu_caret()
-add_filter( 'walker_nav_menu_start_el', 'function_names_menu_caret', 10, 4 );
+} // igrow_illinois_menu_caret()
+add_filter( 'walker_nav_menu_start_el', 'igrow_illinois_menu_caret', 10, 4 );
 
 
 
@@ -41,12 +41,12 @@ add_filter( 'walker_nav_menu_start_el', 'function_names_menu_caret', 10, 4 );
  *
  * @return 	string 							modified menu
  */
-function function_names_icon_before_menu_item( $item_output, $item, $depth, $args ) {
+function igrow_illinois_icon_before_menu_item( $item_output, $item, $depth, $args ) {
 
 	if ( 'services' !== $args->theme_location && 'subheader' !== $args->theme_location ) { return $item_output; }
 
-	$atts 	= function_names_get_attributes( $item );
-	$class 	= function_names_get_svg_by_class( $item->classes );
+	$atts 	= igrow_illinois_get_attributes( $item );
+	$class 	= igrow_illinois_get_svg_by_class( $item->classes );
 
 	if ( empty( $class ) ) { return $item_output; }
 
@@ -60,7 +60,7 @@ function function_names_icon_before_menu_item( $item_output, $item, $depth, $arg
 	return $output;
 
 } // pdc_social_menu_svgs()
-//add_filter( 'walker_nav_menu_start_el', 'function_names_icon_before_menu_item', 10, 4 );
+//add_filter( 'walker_nav_menu_start_el', 'igrow_illinois_icon_before_menu_item', 10, 4 );
 
 /**
  * Adds an SVG icon after the menu item text
@@ -74,12 +74,12 @@ function function_names_icon_before_menu_item( $item_output, $item, $depth, $arg
  *
  * @return 	string 							modified menu
  */
-function function_names_icon_after_menu_item( $item_output, $item, $depth, $args ) {
+function igrow_illinois_icon_after_menu_item( $item_output, $item, $depth, $args ) {
 
 	if ( '' !== $args->theme_location || 'subheader' !== $args->theme_location ) { return $item_output; }
 
-	$atts 	= function_names_get_attributes( $item );
-	$class 	= function_names_get_svg_by_class( $item->classes );
+	$atts 	= igrow_illinois_get_attributes( $item );
+	$class 	= igrow_illinois_get_svg_by_class( $item->classes );
 
 	if ( empty( $class ) ) { return $item_output; }
 
@@ -93,7 +93,7 @@ function function_names_icon_after_menu_item( $item_output, $item, $depth, $args
 	return $output;
 
 } // pdc_social_menu_svgs()
-//add_filter( 'walker_nav_menu_start_el', 'function_names_icon_after_menu_item', 10, 4 );
+//add_filter( 'walker_nav_menu_start_el', 'igrow_illinois_icon_after_menu_item', 10, 4 );
 
 /**
  * Replaces menu item text with an SVG icon
@@ -107,13 +107,13 @@ function function_names_icon_after_menu_item( $item_output, $item, $depth, $args
  *
  * @return 	string 							modified menu
  */
-function function_names_icons_only_menu_item( $item_output, $item, $depth, $args ) {
+function igrow_illinois_icons_only_menu_item( $item_output, $item, $depth, $args ) {
 
 	if ( 'social' !== $args->theme_location ) { return $item_output; }
 
-	$atts 	= function_names_get_attributes( $item );
-	$link 	= function_names_get_svg_link( $item->url );
-	$class 	= function_names_get_svg_by_class( $item->classes, $link );
+	$atts 	= igrow_illinois_get_attributes( $item );
+	$link 	= igrow_illinois_get_svg_link( $item->url );
+	$class 	= igrow_illinois_get_svg_by_class( $item->classes, $link );
 
 	if ( empty( $class ) ) { return $item_output; }
 
@@ -126,8 +126,8 @@ function function_names_icons_only_menu_item( $item_output, $item, $depth, $args
 
 	return $output;
 
-} // function_names_social_menu_svgs()
-add_filter( 'walker_nav_menu_start_el', 'function_names_icons_only_menu_item', 10, 4 );
+} // igrow_illinois_social_menu_svgs()
+add_filter( 'walker_nav_menu_start_el', 'igrow_illinois_icons_only_menu_item', 10, 4 );
 
 /**
  * Returns a string of HTML attributes for the menu item
@@ -135,7 +135,7 @@ add_filter( 'walker_nav_menu_start_el', 'function_names_icons_only_menu_item', 1
  * @param 	object 		$item 			The menu item object
  * @return 	string 						A string of attributes
  */
-function function_names_get_attributes( $item ) {
+function igrow_illinois_get_attributes( $item ) {
 
 	if ( empty( $item ) ) { return; }
 
@@ -160,7 +160,7 @@ function function_names_get_attributes( $item ) {
 
 	return $attributes;
 
-} // function_names_get_attributes()
+} // igrow_illinois_get_attributes()
 
 /**
  * Returns an SVG formatted link
@@ -168,7 +168,7 @@ function function_names_get_attributes( $item ) {
  * @param 	string 		$link 			URL
  * @return 	mixed 						SVG-formatted link
  */
-function function_names_get_svg_link( $link ) {
+function igrow_illinois_get_svg_link( $link ) {
 
 	if ( empty( $link ) ) { return; }
 
@@ -178,7 +178,7 @@ function function_names_get_svg_link( $link ) {
 
 	return $return;
 
-} // function_names_get_svg_link()
+} // igrow_illinois_get_svg_link()
 
 /**
  * Gets the appropriate SVG based on a menu item class
@@ -186,13 +186,13 @@ function function_names_get_svg_link( $link ) {
  * @param  [type] $url [description]
  * @return [type]      [description]
  */
-function function_names_get_svg_by_class( $classes, $link = '' ) {
+function igrow_illinois_get_svg_by_class( $classes, $link = '' ) {
 
 	$output = '';
 
 	foreach ( $classes as $class ) {
 
-		$check = function_names_get_svg( $class, $link );
+		$check = igrow_illinois_get_svg( $class, $link );
 
 		if ( ! is_null( $check ) ) { $output .= $check; break; }
 
@@ -200,10 +200,10 @@ function function_names_get_svg_by_class( $classes, $link = '' ) {
 
 	return $output;
 
-} // function_names_get_svg_by_class()
+} // igrow_illinois_get_svg_by_class()
 
 // Function that will return our WordPress menu
-function function_names_list_menu( $atts, $content = null ) {
+function igrow_illinois_list_menu( $atts, $content = null ) {
 
 	extract( shortcode_atts( array(
 		'menu'            => '',
@@ -243,4 +243,4 @@ function function_names_list_menu( $atts, $content = null ) {
 	);
 }
 //Create the shortcode
-add_shortcode( 'listmenu', 'function_names_list_menu' );
+add_shortcode( 'listmenu', 'igrow_illinois_list_menu' );
