@@ -1,6 +1,60 @@
-$font__main 				: sans-serif;
+/*
+
+Font is the same as in current i-grow site -
+Museo 300 for text,
+Museo 500 for bold and Museo 700 for black weights.
+
+Font styles are as follows:
+Refer A Client text - 500 - 14pt
+Nav Bar: 500 - size 18pt
+Body Text - Accent is 500,
+basic text is 300 - 22pt
+Happenings Header: 700 - 40pt
+Happenings text (in box) Headline/Date - 500 - 20pt/18pt
+Text 300 - 18pt
+Governors office address & Footer text - 500 - 14pt
+
+ */
+
+
+$font__light 				: 'Museo-300';
+$font__med 					: 'Museo-500';
+$font__bold 				: 'Museo-700';
+
+$font__main 				: $font__light, sans-serif;
 $font__code 				: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre 					: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body 	: 1.5;
 $font__line-height-pre 		: 1.6;
 $font__size-social 			: 36px;
+
+
+@font-face {
+	font-family: 'Museo-700';
+	src: url('fonts/museo_700.eot');
+	src: url('fonts/museo_700.eot?#iefix') format('embedded-opentype'),
+		url('fonts/museo_700.woff2') format('woff2'),
+		url('fonts/museo_700.woff') format('woff'),
+		url('fonts/museo_700.ttf') format('truetype'),
+		url('fonts/museo_700.svg#wf') format('svg');
+}
+
+@font-face {
+	font-family: 'Museo-300';
+	src: url('fonts/museo_300.eot');
+	src: url('fonts/museo_300.eot?#iefix') format('embedded-opentype'),
+		url('fonts/museo_300.woff2') format('woff2'),
+		url('fonts/museo_300.woff') format('woff'),
+		url('fonts/museo_300.ttf') format('truetype'),
+		url('fonts/museo_300.svg#wf') format('svg');
+}
+
+@font-face {
+	font-family: 'Museo-500';
+	src: url('fonts/museo_500.eot');
+	src: url('fonts/museo_500.eot?#iefix') format('embedded-opentype'),
+		url('fonts/museo_500.woff2') format('woff2'),
+		url('fonts/museo_500.woff') format('woff'),
+		url('fonts/museo_500.ttf') format('truetype'),
+		url('fonts/museo_500.svg#wf') format('svg');
+}

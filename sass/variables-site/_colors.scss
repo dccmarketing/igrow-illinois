@@ -1,12 +1,15 @@
-$light	: #fff;
-$med	: #ccc;
-$dark	: #020202;
+$light		: #fff;
+$med		: #ccc;
+$dark		: #020202;
 
-$red 	:
-$orange :
-$yellow :
-$green 	:
-$aqua 	:
+$red 		: #FD4F57;
+$darkorange : #f36e31;
+$orange 	: #f36d32;
+$liteorange : #f8992f;
+$yellow 	: #ffcf2d;
+$green 		: #d9e01f;
+$teal 		: #05b7af;
+$cream 		: #fffbef;
 
 // Backgrounds
 $color__background-body		: $light;
@@ -18,9 +21,11 @@ $color__bg-input 			: $med;
 $color__background-button	: $med;
 $color__bg-button-hover 	: lighten( $color__background-button, 10% );
 $color__bg-button-focus 	: darken( $color__background-button, 10% );
+$color__bg-header 			: $cream;
+$color__bg-footer 			: $cream;
 
 // Text colors
-$color__text-screen			: #21759b;
+$color__text-screen			: $teal;
 $color__text-input			: $dark;
 $color__text-input-focus	: $dark;
 $color__link				: royalblue;
@@ -53,21 +58,22 @@ $color__shadow-button-inner-focus 	: rgba(255, 255, 255, 0.5);
 $color__shadow-button-inner-2-focus : rgba(0, 0, 0, 0.15);
 
 // Menu colors
-$color__bg-menu-button			: $med;
-$color__bg-menu-button-mobile 	: $med;
-$color__bg-menu-button-pseudo 	: $color__bg-menu-button-mobile;
-$color__bg-menu-item			: $med;
-$color__bg-menu-item-mobile		: $med;
-$color__bg-menu-current			: darken( $color__bg-menu-item, 25% );
-$color__bg-menu-current-hover	: darken( $color__bg-menu-item, 25% );
+$color__bg-menu-button			: $teal;
+$color__bg-menu-button-mobile 	: $teal;
+$color__bg-menu-button-pseudo 	: $teal;
+$color__bg-menu 				: $teal;
+$color__bg-menu-item			: $teal;
+$color__bg-menu-item-mobile		: $teal;
+$color__bg-menu-current			: $light;
+$color__bg-menu-current-hover	: $light;
 
-$color__text-menu				: $dark;
+$color__text-menu				: $light;
 $color__text-menu-hover			: darken( $color__bg-menu-item, 25% );
 $color__text-menu-mobile		: $light;
 $color__text-menu-mobile-hover 	: $dark;
 $color__text-menu-button		: $light;
 $color__text-menu-button-mobile : $light;
-$color__text-menu-button-pseudo : $color__text-menu-button-mobile;
-$color__text-menu-current		: $light;
-$color__text-menu-current-hover	: $med;
+$color__text-menu-button-pseudo : $light;
+$color__text-menu-current		: $teal;
+$color__text-menu-current-hover	: $teal;
 $color__text-submenu			: $light;

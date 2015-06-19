@@ -1,39 +1,115 @@
 .site-footer {
-	width 		: 100%;
-	float 		: left;
+	width 			: 100%;
+	float 			: left;
+	background-color: $color__bg-footer;
+
+	.divider {
+		display: none;
+		color 	: $green;
+		margin 	: 0 0.5em;
+
+		@media only screen and (min-width: $bp__footer-address) {
+			display: inline;
+		}
+	}
+
+	address {
+		margin 		: 0;
+		font-style 	: normal;
+	}
+
+	p {
+		margin: 0;
+	}
+
 }
 
 .wrap-footer {
 	overflow 	: auto;
+	text-align 	: center;
+
+	@media only screen and (max-width: $bp__footer-final - 1) {
+		max-width 	: 500px !important;
+	}
+
+	@media only screen and (min-width: $bp__footer-final) {
+		padding-top : 3em !important;
+		max-width 	: 1000px;
+	}
 }
 
-.footer-left {
-	width 		: 100%;
-	float 		: left;
-	overflow 	: auto;
+.govs-office,
+.state-seal {
+	text-align: center;
 
-	@media only screen and (min-width: $bp__tablet) {
-		@include margcols( 5 );
+	@media only screen and (min-width: $bp__menu-button+1) {
+		display 		: inline-block;
+		vertical-align 	: top;
+		height 			: $size__footer-height;
 	}
+}
+
+.govs-office {
+	@media only screen and (min-width: $bp__menu-button+1) and (max-width: $bp__footer-final) {
+		float: left;
+	}
+
+	@media only screen and (min-width: $bp__footer-final) {
+		width: 33%;
+	}
+}
+
+.state-seal {
+	@media only screen and (min-width: $bp__menu-button+1) and (max-width: $bp__footer-final) {
+		float: right;
+	}
+
+	@media only screen and (min-width: $bp__footer-final) {
+		width: 15%;
+	}
+}
+
+.logo-gov,
+.logo-seal {
+	@media only screen and (min-width: $bp__menu-button+1) {
+		position 		: relative;
+		top 			: 50%;
+		transform 		: translateY(-50%);
+	}
+}
+
+.logo-seal {
+	max-width: 100px;
 }
 
 .site-info {
-	text-align: center;
+	text-align	: center;
 	width 		: 100%;
-	float 		: left;
 	overflow 	: auto;
+	font-size 	: 14px;
 
-	@media only screen and (min-width: $bp__tablet) {
-		@include margcols( 5, 3 );
+	@media only screen and (min-width: $bp__footer-final) {
+		text-align 		: left;
+		display 		: inline-block;
+		vertical-align 	: top;
+		height 			: $size__footer-height;
+		width 			: 45%;
 	}
 }
 
-.footer-right {
-	width 		: 100%;
-	float 		: left;
-	overflow 	: auto;
+.info-wrap {
+	@media only screen and (min-width: $bp__footer-final) {
+		position 		: relative;
+		top 			: 50%;
+		transform 		: translateY(-50%);
+	}
+}
 
-	@media only screen and (min-width: $bp__tablet) {
-		@include margcols( 5 );
+.street,
+.city,
+.phone,
+.fax {
+	@media only screen and (min-width: $bp__footer-address) {
+		display: inline-block;
 	}
 }

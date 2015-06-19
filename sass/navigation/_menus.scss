@@ -3,6 +3,7 @@
 	display			: block;
 	float			: left;
 	width			: 100%;
+	background-color: $color__bg-menu;
 
 	ul {
 		@extend %listreset;

@@ -43,6 +43,7 @@ function igrow_illinois_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
+		'footer' => esc_html__( 'Footer Menu', 'igrow-illinois' ),
 		'primary' => esc_html__( 'Primary Menu', 'igrow-illinois' ),
 		'social' => esc_html__( 'Social Links', 'igrow-illinois' )
 	) );

@@ -1,0 +1,25 @@
+.nav-footer {
+	padding: 1em;
+
+	.menu-items {
+		@extend %listreset;
+		text-align: center;
+	}
+
+	li {
+		@media only screen and (min-width: $bp__footer-menu) {
+			display 		: inline-block;
+			vertical-align 	: top;
+			border-right 	: 1px solid $teal;
+			padding 		: 0 0.75em 0 0.5em;
+
+			&:last-child {
+				border: none;
+			}
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
