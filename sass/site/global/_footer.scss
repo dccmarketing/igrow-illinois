@@ -1,6 +1,6 @@
 .site-footer {
 	width 			: 100%;
-	float 			: left;
+	//float 			: left;
 	background-color: $color__bg-footer;
 
 	.divider {
@@ -25,7 +25,6 @@
 }
 
 .wrap-footer {
-	overflow 	: auto;
 	text-align 	: center;
 
 	@media only screen and (max-width: $bp__footer-final - 1) {
@@ -85,7 +84,6 @@
 .site-info {
 	text-align	: center;
 	width 		: 100%;
-	overflow 	: auto;
 	font-size 	: 14px;
 
 	@media only screen and (min-width: $bp__footer-final) {

@@ -17,7 +17,6 @@
 wp_head();
 
 ?></head>
-
 <body <?php body_class(); ?>><?php
 
 do_action( 'after_body' );
@@ -28,8 +27,13 @@ do_action( 'after_body' );
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrap wrap-header">
 			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="screen-reader-text">iGrow Illinois Logo</span><?php igrow_illinois_the_svg( 'logo', esc_url( home_url( '/' ) ) ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<h1 class="site-title">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<span class="screen-reader-text"><?php esc_html_e( 'Return to the iGrow home page', 'igrow-illinois' ); ?></span>
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" class="logo" alt="iGrow Illinois Logo" />
+					</a>
+				</h1>
+				<a class="link-refer" href="<?php echo esc_url( site_url( '/request-more-information' ) ); ?>"><?php esc_html_e( 'Request More Information', 'igrow-illinois' ); ?></a>
 			</div><!-- .site-branding -->
 		</div><!-- .header_wrap -->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -38,9 +42,17 @@ do_action( 'after_body' );
 				wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
 
 		?></nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+	</header><!-- #masthead --><?php
 
-	<div id="content" class="site-content">
+	if ( is_front_page() ) {
+
+		putRevSlider( 'homepage' );
+
+		get_template_part( 'template-parts/content', 'circles' );
+
+	}
+
+	?><div id="content" class="site-content">
 		<div class="wrap wrap-content">
 			<div class="breadcrumbs"><?php
 

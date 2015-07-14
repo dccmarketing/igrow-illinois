@@ -1,5 +1,5 @@
 <?php if ( has_nav_menu( 'social' ) ) {
-					
+
 	$menu['theme_location']		= 'social';
 	$menu['container'] 			= 'div';
 	$menu['container_id']    	= 'menu-social-media';
@@ -11,4 +11,4 @@
 
 	wp_nav_menu( $menu );
 
-} ?>
+}

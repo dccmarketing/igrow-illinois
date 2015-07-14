@@ -16,15 +16,10 @@ get_header(); ?>
 
 				get_template_part( 'template-parts/content', 'page' );
 
-					// If comments are open or have more than one comment, load comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						comments_template();
-					endif;
-
 			endwhile; // loop
 
 		?></main><!-- #main -->
 	</div><!-- #primary --><?php
 
 get_sidebar( 'left' );
-get_footer(); ?>
+get_footer();

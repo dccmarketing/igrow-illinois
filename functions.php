@@ -43,9 +43,7 @@ function igrow_illinois_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'footer' => esc_html__( 'Footer Menu', 'igrow-illinois' ),
 		'primary' => esc_html__( 'Primary Menu', 'igrow-illinois' ),
-		'social' => esc_html__( 'Social Links', 'igrow-illinois' )
 	) );
 
 	/*
@@ -118,8 +116,6 @@ function igrow_illinois_scripts() {
 	wp_enqueue_script( 'igrow-illinois-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'igrow-illinois-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
-
-	// wp_enqueue_style( 'igrow-illinois-fonts', igrow_illinois_fonts_url(), array(), null );
 
 } // igrow_illinois_scripts()
 add_action( 'wp_enqueue_scripts', 'igrow_illinois_scripts' );

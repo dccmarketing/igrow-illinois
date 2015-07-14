@@ -140,6 +140,11 @@
 
 
 
+%bgimage {
+	background-repeat 	: no-repeat;
+	background-position : center center;
+	background-size 	: cover;
+}
 
 /**
  * Hides text
@@ -167,7 +172,6 @@
 	border-radius	: 0;
 	text-shadow		: none;
 	outline 		: 0;
-	background		: $color__bg-menu-button-mobile;
 	color 			: $color__text-menu-button-mobile;
 
 	&:hover,
@@ -176,12 +180,17 @@
 		border		: none;
 		box-shadow	: none;
 		border-color: inherit;
-		background 	: $color__bg-menu-button-pseudo;
 	}
 
-	@media only screen and (min-width: $bp__menu-button+1) {
+	@media only screen and (min-width: $bp__footer-menu) {
 		z-index: 9999;
 	}
+}
+
+%nobreak {
+	-webkit-column-break-inside : avoid;
+	page-break-inside 			: avoid;
+	break-inside 				: avoid;
 }
 
 %vertcenter {
@@ -190,10 +199,5 @@
 	transform 	: translateY(-50%);
 }
 
-%nobreak {
-	-webkit-column-break-inside : avoid;
-	page-break-inside 			: avoid;
-	break-inside 				: avoid;
-}
 
 

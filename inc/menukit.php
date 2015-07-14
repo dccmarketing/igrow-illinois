@@ -1,6 +1,18 @@
 <?php
 
 /**
+ * Declare all actions & filters here
+ */
+add_filter( 'walker_nav_menu_start_el', 'igrow_illinois_menu_caret', 10, 4 );
+//add_filter( 'walker_nav_menu_start_el', 'igrow_illinois_icon_before_menu_item', 10, 4 );
+//add_filter( 'walker_nav_menu_start_el', 'igrow_illinois_icon_after_menu_item', 10, 4 );
+add_filter( 'walker_nav_menu_start_el', 'igrow_illinois_icons_only_menu_item', 10, 4 );
+add_shortcode( 'listmenu', 'igrow_illinois_list_menu' );
+
+
+
+
+/**
  * Add Down Caret to Menus with Children
  *
  * @param 	string 		$item_output		//
@@ -25,9 +37,6 @@ function igrow_illinois_menu_caret( $item_output, $item, $depth, $args ) {
 	return $output;
 
 } // igrow_illinois_menu_caret()
-add_filter( 'walker_nav_menu_start_el', 'igrow_illinois_menu_caret', 10, 4 );
-
-
 
 /**
  * Adds an SVG icon before the menu item text
@@ -60,7 +69,6 @@ function igrow_illinois_icon_before_menu_item( $item_output, $item, $depth, $arg
 	return $output;
 
 } // pdc_social_menu_svgs()
-//add_filter( 'walker_nav_menu_start_el', 'igrow_illinois_icon_before_menu_item', 10, 4 );
 
 /**
  * Adds an SVG icon after the menu item text
@@ -93,7 +101,6 @@ function igrow_illinois_icon_after_menu_item( $item_output, $item, $depth, $args
 	return $output;
 
 } // pdc_social_menu_svgs()
-//add_filter( 'walker_nav_menu_start_el', 'igrow_illinois_icon_after_menu_item', 10, 4 );
 
 /**
  * Replaces menu item text with an SVG icon
@@ -127,7 +134,6 @@ function igrow_illinois_icons_only_menu_item( $item_output, $item, $depth, $args
 	return $output;
 
 } // igrow_illinois_social_menu_svgs()
-add_filter( 'walker_nav_menu_start_el', 'igrow_illinois_icons_only_menu_item', 10, 4 );
 
 /**
  * Returns a string of HTML attributes for the menu item
@@ -242,5 +248,3 @@ function igrow_illinois_list_menu( $atts, $content = null ) {
 		'theme_location'  => $theme_location )
 	);
 }
-//Create the shortcode
-add_shortcode( 'listmenu', 'igrow_illinois_list_menu' );

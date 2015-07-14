@@ -1,0 +1,270 @@
+.home {
+
+	.content-area {
+		font-size 	: 22px;
+
+		@media only screen and (min-width: $bp__tablet) {
+			float 			: left;
+			width 			: 48%;
+			padding-top 	: 5em;
+			padding-bottom 	: 5.5em;
+		}
+
+		@media only screen and (min-width: $bp__circles) {
+			width 			: 60%;
+		}
+
+		p {
+			margin: 0;
+
+			&:nth-child(2) {
+				max-width: 400px;
+			}
+		}
+	}
+
+	.page-content {
+		margin-top: 0;
+	}
+}
+
+.circles {
+	text-align 		: center;
+	padding 		: 1em 0;
+	border-top 		: 5px solid $teal;
+	border-bottom 	: 5px solid $teal;
+	background-color: $light;
+}
+
+.home-circles {
+	@extend %listreset;
+	margin 		: 0 auto;
+	max-width 	: 475px;
+
+	@media only screen and (min-width: $bp__circles) {
+		max-width: 100%;
+	}
+}
+
+.home-circle {
+	display 		: inline-block;
+	vertical-align 	: top;
+	width 			: 150px;
+	height 			: 150px;
+	border-radius 	: 50%;
+	border-width 	: 5px;
+	border-style 	: solid;
+	perspective 	: 800px;
+	margin 			: 0.25em 0;
+
+	.coin {
+		transition 			: 0.4s ease;
+		transform-style 	: preserve-3d;
+		width 				: 100%;
+		height 				: 100%;
+		border-radius 		: 50%;
+
+		> div {
+			position 			: absolute;
+			width 				: 100%;
+			height 				: 100%;
+			border-radius 		: 50%;
+			//backface-visibility : hidden;
+		}
+	}
+
+	&:hover {
+
+		.coin {
+			transform: rotate3d(0,1,0,-180deg);
+		}
+
+		.front > svg {
+			opacity: 0;
+		}
+
+		.back > .text {
+			opacity: 1;
+		}
+	}
+
+	.front {
+		z-index: 2;
+
+		svg {
+			width 		: 100px;
+			height 		: 100px;
+			position 	: relative;
+			top 		: 50%;
+			transform 	: translateY(-50%);
+			transition 	: 0.4s ease;
+			opacity 	: 1;
+		}
+	}
+
+	.back {
+		transform: rotate3d( 0, 1, 0, 180deg);
+
+		.text {
+			font-size 	: 14px;
+			position 	: relative;
+			top 		: 50%;
+			transform 	: translateY(-50%);
+			transition 	: 0.4s ease;
+			display 	: block;
+			width 		: 80%;
+			margin 		: 0 auto;
+			opacity 	: 0;
+		}
+	}
+
+	$colors: $red, $orange, $yellow, $green, $teal, $red;
+
+	@for $i from 1 through 6 {
+		&:nth-child(#{$i}) {
+			//color 		: nth( $colors, $i );
+			border-color: nth( $colors, $i );
+
+			.front > svg {
+				fill: nth( $colors, $i );
+			}
+		}
+	}
+}
+
+.wrap-content {
+	padding: 0 !important;
+	position: relative;
+}
+
+.content-haps {
+	@media only screen and (min-width: $bp__tablet) {
+		width: 48%;
+		float: right;
+	}
+
+	@media only screen and (min-width: $bp__circles) {
+		width		: 35%;
+		position 	: absolute;
+		top 		: 0;
+		right 		: 0;
+		z-index 	: 10;
+	}
+
+	h2 {
+		padding: 0 1em;
+
+		@media only screen and (min-width: $bp__tablet) {
+			padding: 0;
+		}
+
+		a {
+			text-decoration : none;
+			font-weight 	: 700;
+			color 			: $darkerorange;
+		}
+	}
+
+	.dashicons {
+		font-size: 1em;
+	}
+}
+
+.posts-haps {
+	//background-color	: lighten( $teal, 5% );
+	background-color 	: $darkerorange;
+	color 				: $light;
+	padding 			: 1em;
+
+	@media only screen and (min-width: $bp__tablet) {
+		border 					: 3px solid $light;
+		box-shadow 				: -2px -2px 15px $dark;
+		border-top-right-radius : 2.25em;
+	}
+
+	h1 {
+		font-size 		: 1.2em;
+		text-decoration : none;
+		margin 			: 0;
+	}
+
+	a {
+		color 			: $light;
+
+		&:focus {
+			outline-color: $light;
+		}
+	}
+
+	.entry-content {
+		margin-top: 0;
+
+		p {
+			margin-top: 0;
+		}
+	}
+
+	.hentry {
+		margin: 0;
+	}
+}
+
+.stripes {
+	display: none;
+
+	@media only screen and (min-width: $bp__circles) {
+		display : block;
+		position: absolute;
+		bottom 	: 240px;
+	}
+}
+
+.stripes-bar {
+	width 			: 100%;
+	height 			: 140px;
+	background-color: $yellow;
+	border-top 		: 5px solid $light;
+	border-bottom 	: 5px solid $light;
+	position 		: relative;
+
+	@media only screen and (min-width: $bp__circles) {
+		display: none;
+	}
+
+	&:before {
+		content 		: "";
+		background-color: $green;
+		height 			: 110px;
+		top 			: 10px;
+		z-index 		: 1;
+		width 			: 100%;
+		display 		: block;
+		border-top 		: 10px solid $red;
+		border-bottom 	: 10px solid $red;
+		position 		: absolute;
+	}
+
+	&:after {
+		content 		: "";
+		position 		: absolute;
+		top 			: 30px;
+		background-color: $yellow;
+		z-index 		: 2;
+		width 			: 100%;
+		display 		: block;
+		border-top 		: 10px solid $orange;
+		border-bottom 	: 10px solid $orange;
+		height 			: 70px;
+	}
+
+	.inner {
+		display 		: block;
+		position 		: absolute;
+		z-index 		: 4;
+		border-top 		: 10px solid $orange;
+		border-bottom 	: 10px solid $red;
+		top 			: 55px;
+		content 		: "";
+		width 			: 100%;
+	}
+}

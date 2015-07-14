@@ -6,10 +6,22 @@ $size__max-width 		: 1000px;
 
 $size__footer-height 	: 120px;
 
+/**
+ * Login Page
+ */
+$size__login-logo-bg 	: 320px; // default size
+$size__login-logo-width : 320px;
+$size__login-logo-height: 120px;
+
+/**
+ * Breakpoints
+ */
 $bp__footer-address 	: 400px;
 $bp__menu-button		: 600px;
 $bp__tablet				: 768px;
 $bp__footer-final 		: 850px;
 $bp__footer-menu 		: 900px;
-$bp__laptop				: 1000px;
-
+$bp__circles 			: 925px;
+$bp__laptop				: 1024px;
+$bp__max 				: 1200px;
+$bp__super-wide 		: 1300px;

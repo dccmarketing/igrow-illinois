@@ -8,42 +8,44 @@
 @import "sass/mixins/mixins-theme";
 
 .login { // page body tag
-	background: $light;
+	background-color: $bg__login-page;
 
 	#login { // div container for login form
+		background-color: $bg__login-container;
 
 		h1 {
 
 			a {
-/* 				background-image: url(images/logo-pdc.jpg);
-			    background-size : cover;
-			    height 			: 110px;
-			    width 			: 110px;
- */			}
+ 				background-image: $bg__logo;
+ 				background-size : $size__login-logo-bg;
+ 				width 			: $size__login-logo-width;
+ 				height 			: $size__login-logo-height;
+
+			}
 		}
 	}
 
 	#loginform {
-		background-color: $med;
+		background-color: $bg__login-form-box;
 		padding-bottom 	: 26px;
 
 		p {
-
+			color: $color__text-login-form;
 		}
 
 		label {
-			color: $light;
+			color: $color__text-login-form-label;
 		}
 
 		.input { // username and password fields
-			background-color: $med;
+			background-color: $bg__login-form-input;
 			border 			: 0;
-			color 			: $light;
+			color 			: $color__text-form-input;
 
 			&:focus,
 			&:active {
-				border 		: 1px solid $med;
-				box-shadow 	: 0 0 5sdpx $med;
+				border 		: 1px solid $color__border-input-pseudo;
+				box-shadow 	: 0 0 5px $color__shadow-input-pseudo;
 			}
 		}
 
@@ -54,30 +56,31 @@
 
 
 		#wp-submit { // submit button itself
-			background-color: $med;
+			background-color: $bg__button-submit;
 			border 			: 0;
 			border-radius 	: 0;
 			box-shadow 		: none;
-			color 			: $light;
+			color 			: $color__text-button-submit;
 			font-size 		: 1.25em;
 			font-weight 	: 700;
 			text-transform 	: uppercase;
 
 			&:hover {
-				background-color: darken( $med, 25% );
-				color 			: $light;
+				background-color: $bg__button-submit-pseudo;
+				color 			: $color__text-submit-pseudo;
 			}
 		}
 	}
 
 	#nav,
 	#backtoblog {
+		background-color: $bg__nav;
 
 		a {
-			color: $dark;
+			color: $color__text-nav-link;
 
 			&:hover {
-				color: $med;
+				color: $color__text-nav-link-pseudo;
 			}
 		}
 	}
@@ -89,8 +92,8 @@
 		}
 
 		#rememberme { // checkbox itself
-			background-color: $med;
-			color 			: $light;
+			background-color: $bg__checkbox;
+			color 			: $color__text-checkbox;
 		}
 	}
 
