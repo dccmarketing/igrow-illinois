@@ -105,7 +105,7 @@ class igrow_illinois_Customize {
 	*/
 	public static function register( $wp_customize ) {
 
-		// Theme Options Panel
+		/*// Theme Options Panel
 		$wp_customize->add_panel( 'theme_options',
 			array(
 				'capability'  		=> 'edit_theme_options',
@@ -231,7 +231,7 @@ class igrow_illinois_Customize {
 				'settings' => 'checkbox_field',
 				'type' => 'checkbox'
 			)
-		);
+		);*/
 
 
 /*
@@ -467,12 +467,12 @@ class igrow_illinois_Customize {
 		$wp_customize->get_setting( 'blogname' )->transport 		= 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport 	= 'postMessage';
 		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-		$wp_customize->get_setting( 'text_field' )->transport 		= 'postMessage';
+/*		$wp_customize->get_setting( 'text_field' )->transport 		= 'postMessage';
 		$wp_customize->get_setting( 'url_field' )->transport 		= 'postMessage';
 		$wp_customize->get_setting( 'email_field' )->transport 		= 'postMessage';
 		$wp_customize->get_setting( 'date_field' )->transport 		= 'postMessage';
 		$wp_customize->get_setting( 'checkbox_field' )->transport 	= 'postMessage';
-
+*/
 	} // register()
 
 	/**

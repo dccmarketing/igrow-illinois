@@ -4,7 +4,8 @@
  * Declare all actions & filters here
  */
 add_action( 'after_setup_theme', 'igrow_illinois_more_setup' );
-add_action( 'login_enqueue_scripts', 'igrow_illinois_more_scripts' );
+add_action( 'login_enqueue_scripts', 'igrow_illinois_login_scripts' );
+add_action( 'wp_enqueue_scripts', 'igrow_illinois_more_styles' );
 
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -15,6 +16,8 @@ add_filter( 'body_class', 'igrow_illinois_page_body_classes' );
 //add_action( 'wp_head', 'igrow_illinois_background_images' );
 add_action( 'wp_head', 'igrow_illinois_add_favicons' );
 add_action( 'excerpt_length', 'igrow_illinois_excerpt_length'  );
+add_filter( 'excerpt_more', 'igrow_illinois_excerpt_read_more' );
+
 
 
 
@@ -36,12 +39,23 @@ function igrow_illinois_more_setup() {
  *
  * @return 	void
  */
-function igrow_illinois_more_scripts() {
+function igrow_illinois_more_styles() {
 
-	wp_enqueue_style( 'igrow-illinois-login', get_stylesheet_directory_uri() . '/login.css', 10, 2 );
+	wp_enqueue_style( 'dashicons' );
 	// wp_enqueue_style( 'igrow-illinois-fonts', igrow_illinois_fonts_url(), array(), null );
 
-} // igrow_illinois_more_scripts()
+} // igrow_illinois_more_styles()
+
+/**
+ * Enqueues scripts and styles for the login page
+ *
+ * @return 	void
+ */
+function igrow_illinois_login_scripts() {
+
+	wp_enqueue_style( 'igrow-illinois-login', get_stylesheet_directory_uri() . '/login.css', 10, 2 );
+
+} // igrow_illinois_login_scripts()
 
 
 
@@ -62,6 +76,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 <?php } // igrow_illinois_analytics_code()
+
+/**
+ * Customizes the "Read More" text for excerpts
+ *
+ * @global   			$post 		The post object
+ * @param 	mixed 		$more 		The current "read more"
+ * @return 	mixed 					The modifed "read more"
+ */
+function igrow_illinois_excerpt_read_more( $more ) {
+
+	global $post;
+	return '... <a class="moretag" href="'. get_permalink( $post->ID ) . '">Read more<span class="screen-reader-text"> about ' . $post->post_title . '</span></a>';
+
+} // igrow_illinois_excerpt_read_more()
 
 /**
  * Properly encode a font URLs to enqueue a Google font
@@ -454,7 +482,7 @@ function igrow_illinois_excerpt_length( $length ) {
 
 	if ( is_front_page() ) {
 
-		return 20;
+		return 15;
 
 	} else {
 

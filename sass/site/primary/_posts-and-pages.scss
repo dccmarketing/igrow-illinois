@@ -81,16 +81,20 @@
 	overflow 	: auto;
 	padding 	: 1em;
 
+	@media only screen and (min-width: $bp__tablet) {
+		&.content-sidebar {
+			width: 70%;
+			float: left;
+		}
+	}
+
 	@media only screen and (min-width: $bp__circles) {
 		margin-bottom: 120px;
 
 		.home & {
 			margin-bottom: 0;
 		}
-
-		&.content-sidebar {
-			width: 70%;
-			float: left;
-		}
 	}
+
+
 }

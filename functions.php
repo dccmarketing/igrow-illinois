@@ -156,3 +156,13 @@ require get_template_directory() . '/inc/themekit.php';
 require get_template_directory() . '/inc/menukit.php';
 
 
+
+function igrow_illinois_test( $form, $atts ) {
+
+	pretty( $form );
+	//
+
+}
+
+add_filter( 'sm_location_search_form', 'igrow_illinois_test', 10, 2 );
+
